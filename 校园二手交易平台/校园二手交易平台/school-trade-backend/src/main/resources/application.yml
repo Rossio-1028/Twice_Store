@@ -1,0 +1,33 @@
+# YML是一种文件格式，全称为YAML（YAML Ain't Markup Language），SpringBoot通常使用YML作为项目配置。
+# 它是一种人类可读的、简洁明了的数据序列化格式。YAML文件格式通常用于配置文件、数据交换、消息传递和其他应用程序。
+# 可以通过文本编辑器进行编辑，也可以通过程序进行解析。YML文件格式是一种以层级缩进的方式表示程序数据结构的格式。
+# 在数据表示方面比XML等格式更加简洁清晰易读。YML文件格式通常以“.yml”为扩展名。
+
+#Spring相关配置
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/DB_School_trade?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #web文件限制配置
+  servlet:
+    multipart:
+     enabled: true
+     max-file-size: 200MB
+     max-request-size: 200MB
+  #Json配置
+  jackson:
+    time: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+#文件路径
+baseUrl: http://localhost:8080
+#C:/exam/xxx/pic  注意这个文件夹路径最好不要有中文
+userFilePath: /Users/33236/Desktop/picture/pic
+
+#Mybatis配置
+mybatis:
+  typeAliasesPackage: com.shanzhu.st.entity
+  mapperLocations: classpath:mapper/*.xml
